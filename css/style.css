@@ -194,6 +194,14 @@ Contenido
 .lineaDivisora{
     border: 1px solid #79FF39;
 }
+.page-item.active .page-link{
+    background: #FF39BE;
+    color: white;
+    border:1px solid #BBB;
+}
+.page-link{
+    color: #777;
+}
 /*
  Tablet horizontal (LG screen 1024px)
 */
@@ -236,7 +244,7 @@ Contenido
         font-size: 18px;
     }
     .fecha{
-        top: -488px;
+        top: -343px;
     }
 }
 
