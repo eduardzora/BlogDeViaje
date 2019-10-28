@@ -205,6 +205,9 @@ Contenido
 /*
  Grid footer categorias
 */
+footer{
+    background: black;
+}
 .gridFooter figure{
     position: relative;
     border-top: 4px solid white;
@@ -303,6 +306,15 @@ Contenido
     }
     .fecha{
         top: -343px;
+    }
+    .gridFooter figure{
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        border-left: 2px solid white;
+        border-right: 2px solid white;
+    }
+    .gridFooter figure p{
+        font-size: 12px;
     }
 }
 
