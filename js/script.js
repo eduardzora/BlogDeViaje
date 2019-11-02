@@ -54,3 +54,17 @@ $('.pagination').twbsPagination({
     prev: '<i class="fas fa-angle-left"><i/>',
     next: '<i class="fas fa-angle-right"><i/>'
 });
+
+//Scrollorama
+var controller = $.superscrollorama();
+controller.addTween('.contenidoInicio .container', TweenMax.from(
+    $('.contenidoInicio .container'), .5, { css: { opacity: 0 } }
+));
+
+//Scroll up
+$.scrollUp({
+    scrollText:"",
+    scrollSpeed:2000,
+    easingType:"easeOutQuint"
+
+});
