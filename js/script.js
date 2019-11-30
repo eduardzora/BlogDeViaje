@@ -93,9 +93,14 @@ function read(item, index) {
         valorP = 100 / numItem;
     }
     for (var i = 0; i < item.length; i++) {
+        preload(i, item);
+    }
+}
+function preload(i, item) {
+    setTimeout(function () {
         $(item[i]).ready(function () {
             numCarga++;
-            incremento = Math.ceil(numCarga * valorP);
+            incremento = Math.floor(numCarga * valorP);
             $('#porcentajeCarga').html(incremento + '%');
             $('#rellenoCarga').css({ 'width': incremento + '%' });
 
@@ -104,5 +109,5 @@ function read(item, index) {
                 $('body').delay(350).css({ "overflow-y": "scroll" });
             }
         });
-    }
+    }, i * 100)
 }
