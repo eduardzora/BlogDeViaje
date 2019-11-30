@@ -63,8 +63,46 @@ controller.addTween('.contenidoInicio .container', TweenMax.from(
 
 //Scroll up
 $.scrollUp({
-    scrollText:"",
-    scrollSpeed:2000,
-    easingType:"easeOutQuint"
+    scrollText: "",
+    scrollSpeed: 2000,
+    easingType: "easeOutQuint"
 
 });
+
+/*Preload*/
+$('body').css({ "overflow-y": "hidden" })
+
+let cargarImg = $('img');
+let cargarScript = $('script');
+let cargarCss = $('link');
+let cargarVideos = $('video');
+let cargarAudio = $('audio');
+let totalObject = [];
+var numItem = 0;
+var valorP = 0;
+var incremento = 0;
+var numCarga = 0;
+
+totalObject.push(cargarImg, cargarScript, cargarCss, cargarVideos, cargarAudio);
+
+totalObject.forEach(read);
+
+function read(item, index) {
+    for (var i = 0; i < item.length; i++) {
+        numItem++;
+        valorP = 100 / numItem;
+    }
+    for (var i = 0; i < item.length; i++) {
+        $(item[i]).ready(function () {
+            numCarga++;
+            incremento = Math.ceil(numCarga * valorP);
+            $('#porcentajeCarga').html(incremento + '%');
+            $('#rellenoCarga').css({ 'width': incremento + '%' });
+
+            if (incremento >= 100) {
+                $('#preload').delay(350).fadeOut('slow');
+                $('body').delay(350).css({ "overflow-y": "scroll" });
+            }
+        });
+    }
+}
