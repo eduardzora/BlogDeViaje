@@ -78,6 +78,25 @@ Banner style
 .bannerEstatico{
     background: rgba(0,0,0,0);
 }
+.textoBanner{
+    position: absolute;
+    width: 50%;
+    text-align: center;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+}
+.textoBanner h1{
+    font-family: 'Chewy', cursive;
+    font-size: 60px;
+}
+.textoBanner h5{
+    line-height: 30px;
+    font-weight: 100;
+    font-size: 18px;
+}
 
 /*
 Menú style
@@ -169,6 +188,26 @@ Grid categorias style
     color: white;
     font-weight: 100;
     font-size: 20px;
+}
+/*
+BreadCrumb
+*/
+.breadcrumb-item+.breadcrumb-item::before{
+    position: relative;
+    background:url(../img/separador.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding-right: .5rem;
+    color: #6C757D;
+    content: url(../img/espacio.png);
+    width: 60px;
+    left: -10px;
+    line-height: 50px;
+}
+.breadcrumb-item.inicio{
+    position: relative;
+    top: 13px;
 }
 /*
 Contenido
@@ -325,6 +364,12 @@ Preload
     .menu .nav{
         margin-top: 15%;
     }
+    .textoBanner h1{
+        font-size: 40px;
+    }
+    .textoBanner h5{
+        font-size: 17px;
+    }
 }
 
 /*
@@ -340,6 +385,13 @@ Preload
     }
     .menu .nav{
         margin-top: 20%;
+    }
+    .textoBanner h1{
+        margin-top: 40px;
+        font-size: 30px;
+    }
+    .textoBanner h5{
+        font-size: 16px;
     }
     .grid .photo1{
         height: 300px;
@@ -414,6 +466,16 @@ Preload
     .fecha{
         top: -377px;
     }
+    .breadcrumb-item+.breadcrumb-item::before{
+        width: 40px;
+        background-size: contain;
+    }
+    .breadcrumb-item.inicio{
+        font-size: 13px;
+    }
+    .breadcrumb-item.inicio, .breadcrumb-item.active{
+        font-size: 13px;
+    }
 }
 
 /*
@@ -463,5 +525,15 @@ Preload
         top: -227px;
         font-size: 12px;
         height: 35px;
+    }
+    .breadcrumb-item+.breadcrumb-item::before{
+        width: 40px;
+        background-size: contain;
+    }
+    .breadcrumb-item.inicio{
+        font-size: 13px;
+    }
+    .breadcrumb-item.inicio, .breadcrumb-item.active{
+        font-size: 13px;
     }
 }

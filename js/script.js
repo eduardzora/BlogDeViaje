@@ -37,12 +37,17 @@ $('.btn-close').click(function () {
 });
 
 //Grid categorias
-$('.grid figure').mouseover(function () {
+$('.grid figure, .gridFooter figure').mouseover(function () {
     $(this).css({ 'background-position': 'right bottom' });
 });
 
-$('.grid figure').mouseout(function () {
+$('.grid figure, .gridFooter figure').mouseout(function () {
     $(this).css({ 'background-position': 'left top' });
+});
+
+$('.grid figure, .gridFooter figure').click(function () {
+    var vinculo = $(this).attr('vinculo');
+    window.location = vinculo;
 });
 
 //Paginación
