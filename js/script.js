@@ -116,3 +116,13 @@ function preload(i, item) {
         });
     }, i * 100)
 }
+
+/*
+Deslizador de articulos
+*/
+$('.deslizadorArticulos').jdSlider({
+    wrap: '.slide-inner',
+    slideShow:3,
+    slideToScroll:3,
+    siLoop:true
+});
